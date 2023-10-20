@@ -23,21 +23,22 @@ void ChangeArray(void);
 
 int main()
 {
+	setlocale(LC_ALL, "Russian");
 	system("mode con cols=70 lines=60");
 	system("color black");
 	char c;
 	while (1)
 	{
 		system("cls");
-		cout << " Razmer massiva - " << N << ".\n\n";
-		cout << " 1) Create vozrastayshego massiva\n";
-		cout << " 2) Create ubivayshego massiva\n";
-		cout << " 3) Create random massive\n";
-		cout << " 4) Prosmotr massiva\n";
-		cout << " 5) Sortirovka metodom pramogo vibora\n";
-		cout << " 6) Sortirovka puzirkovim metodom\n";
-		cout << " 7) Sortirovka sheikernim metodom  sortirovki\n";
-		cout << " 0) Exit\n";
+		cout << " Размер массива - " << N << ".\n\n";
+		cout << " 1) Создать возрастающий массив\n";
+		cout << " 2) Создать убывающий массив\n";
+		cout << " 3) Создать рандомный массив\n";
+		cout << " 4) Просмотр массива\n";
+		cout << " 5) Сортировка методом прямого выбора\n";
+		cout << " 6) Сортировка пузырьковым методом\n";
+		cout << " 7) Сортировка шейкерным методом\n";
+		cout << " 0) Выход\n";
 		c = _getch();
 		switch (c)
 		{
@@ -50,7 +51,7 @@ int main()
 		case '6':system("cls"); BubbleSort(); system("pause"); break;
 		case '7':system("cls"); ShakeSort(); system("pause"); break;
 		case '0':return 0;
-		default:cout << "\nError! Nevernii vvod. Najmite lybuy klavishu."; _getch();
+		default:cout << "\nОшибка! Неверный ввод. Нажмите любую клавишу."; _getch();
 		}
 	}
 }
@@ -61,7 +62,7 @@ void IncArray()
 	{
 		array[i] = i + 1;
 	}
-	cout << "Vozrastayshii massive create!\n\n";
+	cout << "Возрастающий массив создан!\n\n";
 	ViewArray();
 	CheckSum();
 	Series();
@@ -72,7 +73,7 @@ void DecArray()
 	{
 		array[i] = N - i;
 	}
-	cout << "Ubivayshii massive create!\n\n";
+	cout << "Убывающий массив создан!\n\n";
 	ViewArray();
 	CheckSum();
 	Series();
@@ -83,7 +84,7 @@ void RandArray()
 	{
 		array[i] = 1 + rand() % N;
 	}
-	cout << "Random massive create!\n\n";
+	cout << "Рандомный массив создан!\n\n";
 	ViewArray();
 	CheckSum();
 	Series();
@@ -105,7 +106,7 @@ void CheckSum()
 	{
 		cs = cs + array[i];
 	}
-	cout << "Kontrolnaia summa: " << cs << "\n";
+	cout << "Контрольная сумма: " << cs << "\n";
 }
 
 void Series()
@@ -119,13 +120,13 @@ void Series()
 		else
 			s = s + 1;
 	}
-	cout << "Chislo serii v massive: " << s << "\n";
+	cout << "число серии в массиве: " << s << "\n";
 }
 void SelectSort()
 {
 	int min, temp, j;
 	int fw, compare;
-	cout << "Do sortirovki:\n";
+	cout << "До сортировки:\n";
 	CheckSum();
 	Series();
 	cout << "\n";
@@ -152,17 +153,17 @@ void SelectSort()
 		fw = fw + 1;
 	}
 	ViewArray();
-	cout << "Posle sortirovki:\n";
+	cout << "После сортировки:\n";
 	CheckSum();
 	Series();
 	cout << "\n";
-	cout << "Kollichestvo sravnenii: " << compare << ", kollichestvo peresilok: " << fw << endl;
+	cout << "Количество сравнений: " << compare << ", количество пересилок: " << fw << endl;
 }
 void BubbleSort()
 {
 	int i, j, temp;
 	int fw, compare;
-	cout << "Do sortirovki:\n";
+	cout << "До сортировки:\n";
 	CheckSum();
 	Series();
 	cout << "\n";
@@ -185,17 +186,17 @@ void BubbleSort()
 		}
 	}
 	ViewArray();
-	cout << "Posle sortirovki:\n";
+	cout << "После сортировки:\n";
 	CheckSum();
 	Series();
 	cout << "\n";
-	cout << "Kollichestvo sravnenii: " << compare << ", kollichestvo peresilok: " << fw << endl;
+	cout << "Количество сравнений: " << compare << ", количество пересилок: " << fw << endl;
 }
 void ShakeSort()
 {
 	int l, r, temp;
 	int fw, compare;
-	cout << "Do sortirovki:\n";
+	cout << "До сортировки:\n";
 	CheckSum();
 	Series();
 	cout << "\n";
@@ -238,11 +239,11 @@ void ShakeSort()
 		l++;
 	}
 	ViewArray();
-	cout << "Posle sortirovki:\n";
+	cout << "После сортировки:\n";
 	CheckSum();
 	Series();
 	cout << "\n";
-	cout << "Kollichestvo sravnenii: " << compare << ", kollichestvo peresilok: " << fw << endl;
+	cout << "Количество сравнений: " << compare << ", количество пересилок: " << fw << endl;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
