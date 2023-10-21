@@ -157,7 +157,7 @@ void SelectSort()
 	CheckSum();
 	Series();
 	cout << "\n";
-	cout << "Количество сравнений: " << compare << ", количество пересилок: " << fw << endl;
+	cout << "Количество сравнений: " << compare << ", количество пересылок: " << fw << endl;
 }
 void BubbleSort()
 {
@@ -190,7 +190,7 @@ void BubbleSort()
 	CheckSum();
 	Series();
 	cout << "\n";
-	cout << "Количество сравнений: " << compare << ", количество пересилок: " << fw << endl;
+	cout << "Количество сравнений: " << compare << ", количество пересылок: " << fw << endl;
 }
 void ShakeSort()
 {
@@ -243,7 +243,7 @@ void ShakeSort()
 	CheckSum();
 	Series();
 	cout << "\n";
-	cout << "Количество сравнений: " << compare << ", количество пересилок: " << fw << endl;
+	cout << "Количество сравнений: " << compare << ", количество пересылок: " << fw << endl;
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
